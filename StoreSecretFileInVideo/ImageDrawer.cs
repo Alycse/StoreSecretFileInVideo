@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace StoreFileInVideo {
     class ImageDrawer {
 
-        private const int ProgressInterval = 50;
+        private const int ProgressInterval = 25;
 
         private IProgress<int> _progress;
         private int _progressCount;
@@ -44,6 +44,7 @@ namespace StoreFileInVideo {
 
         private Bitmap ProcessImage (SolidBrush brush, int width, int height, int boxSize) {
             Bitmap image = new Bitmap(width, height);
+            Rectangle rect = new Rectangle(0, 0, boxSize, boxSize);
 
             using (Graphics graphics = Graphics.FromImage(image)) {
                 for (int x = 0; x + boxSize - 1 < image.Width && _byteIndex < _fileBytes.Length; x += boxSize) {
@@ -52,7 +53,9 @@ namespace StoreFileInVideo {
                     byte i = 0;
                     for (int y = 0; y + boxSize - 1 < image.Height && i < colorByte.Length && !colorByte[i].IsEmpty; y += boxSize, i++) {
                         brush.Color = colorByte[i];
-                        graphics.FillRectangle(brush, new Rectangle(x, y, boxSize, boxSize));
+                        rect.X = x;
+                        rect.Y = y;
+                        graphics.FillRectangle(brush, rect);
                     }
 
                     _byteIndex++;

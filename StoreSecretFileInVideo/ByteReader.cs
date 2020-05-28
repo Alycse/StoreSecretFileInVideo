@@ -11,7 +11,7 @@ using Accord.Video.FFMPEG;
 namespace StoreFileInVideo {
     class ByteReader {
 
-        private const int ProgressInterval = 1;
+        private const int ProgressInterval = 2;
 
         private IProgress<int> _progress;
         private int _progressCount;
@@ -49,22 +49,28 @@ namespace StoreFileInVideo {
 
         private void GetVideoFrameBytes (List<byte> fileBytes, Bitmap fileImage, int boxSize) {
             for (int x = boxSize / 2; x < fileImage.Width; x += boxSize) {
-
-                List<Color> colors = new List<Color>();
+                byte videoFrameByte = 0;
+                bool hasColor = false;
                 for (int y = boxSize / 2; y < fileImage.Height; y += boxSize) {
                     Color pixelColor = fileImage.GetPixel(x, y);
                     if (pixelColor.B >= 125) {
-                        colors.Add(pixelColor);
+                        if (!hasColor) {
+                            hasColor = true;
+                        }
+                        byte additionalByte = ColorByte.GetAdditionalByteFromColor(pixelColor);
+                        if (additionalByte == 0) {
+                            break;
+                        } else {
+                            videoFrameByte += additionalByte;
+                        }
                     } else {
                         break;
                     }
                 }
-
-                if (colors.Count > 0) {
-                    byte videoFrameByte = ColorByte.GetByteFromColors(colors);
+                if (hasColor) {
                     fileBytes.Add(videoFrameByte);
                 }
-            }   
+            }
         }
 
         private void ReportProgress (int increment) {

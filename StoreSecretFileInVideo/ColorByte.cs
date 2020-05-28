@@ -25,6 +25,22 @@ namespace StoreFileInVideo {
             return colors;
         }
 
+        public static byte GetAdditionalByteFromColor(Color color) {
+            if (color.R < 125 && color.G < 125) {
+                return 0;
+            } else {
+                if (color.R >= 125) {
+                    if (color.G >= 125) {
+                        return 3;
+                    } else {
+                        return 1;
+                    }
+                } else {
+                    return 2;
+                }
+            }
+        }
+
         public static byte GetByteFromColors(List<Color> colors) {
             byte fileByte = 0;
             if (colors.Count > 0 && colors[0].R < 125 && colors[0].G < 125) {
