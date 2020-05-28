@@ -11,12 +11,10 @@ using Accord.Video.FFMPEG;
 namespace StoreFileInVideo {
     class VideoWriter {
 
-        private const int ProgressInterval = 50;
-
         public async void WriteVideo (string outputPath, int fps, byte[] fileBytes, byte[] filenameBytes, int boxSize, ProgressBar progressBar, RichTextBox storeInfoTextBox) {
             storeInfoTextBox.Text = "Storing file to a video...";
 
-            progressBar.Value = 0;
+            progressBar.Value = 1;
 
             int totalProgressCount = 0;
             var progress = new Progress<int>(progressIncrement => {
@@ -25,14 +23,13 @@ namespace StoreFileInVideo {
             });
 
             VideoFileWriter writer = new VideoFileWriter();
-            writer.Open(outputPath, 1920, 1080, fps, VideoCodec.Default);
-
+            writer.Open(outputPath, 1280, 720, fps, VideoCodec.Default);
             Task drawImagesTask = Task.Factory.StartNew(() => {
                 ImageDrawer filenameImageDrawer = new ImageDrawer(writer, filenameBytes);
-                filenameImageDrawer.DrawImages(0, filenameBytes.Length, 1920, 1080, boxSize);
+                filenameImageDrawer.DrawImages(0, filenameBytes.Length, 1280, 720, boxSize);
 
-                ImageDrawer fileImageDrawer = new ImageDrawer(writer, fileBytes);
-                fileImageDrawer.DrawImages(0, fileBytes.Length, 1920, 1080, boxSize);
+                ImageDrawer fileImageDrawer = new ImageDrawer(writer, fileBytes, progress);
+                fileImageDrawer.DrawImages(0, fileBytes.Length, 1280, 720, boxSize);
             });
             await drawImagesTask;
 

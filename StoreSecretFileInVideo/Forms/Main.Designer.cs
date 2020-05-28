@@ -45,15 +45,16 @@
             this.extractProgressBar = new System.Windows.Forms.ProgressBar();
             this.extractOutputPathFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.extractBoxSizeRecommendedLabel = new System.Windows.Forms.Label();
-            this.extractFpsRecommendedLabel = new System.Windows.Forms.Label();
+            this.extractFpsMultiplierRecommendedLabel = new System.Windows.Forms.Label();
             this.extractBoxSizeTextBox = new System.Windows.Forms.TextBox();
             this.extractBoxSizeLabel = new System.Windows.Forms.Label();
-            this.extractFpsLabel = new System.Windows.Forms.Label();
-            this.extractFpsTextBox = new System.Windows.Forms.TextBox();
+            this.extractFpsMultiplierLabel = new System.Windows.Forms.Label();
+            this.extractFpsMultiplierTextBox = new System.Windows.Forms.TextBox();
             this.setExtractOutputPathButton = new System.Windows.Forms.Button();
             this.extractOutputPathTextBox = new System.Windows.Forms.TextBox();
             this.storeInfoTextBox = new System.Windows.Forms.RichTextBox();
             this.extractInfoTextBox = new System.Windows.Forms.RichTextBox();
+            this.extractFpsMultiplierRecommendedBLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseStoreFilePathButton
@@ -97,7 +98,7 @@
             // 
             // browseExtractVideoPathButton
             // 
-            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(22, 344);
+            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(22, 345);
             this.browseExtractVideoPathButton.Name = "browseExtractVideoPathButton";
             this.browseExtractVideoPathButton.Size = new System.Drawing.Size(129, 23);
             this.browseExtractVideoPathButton.TabIndex = 3;
@@ -134,17 +135,17 @@
             // storeLabel
             // 
             this.storeLabel.AutoSize = true;
-            this.storeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storeLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.storeLabel.Location = new System.Drawing.Point(19, 17);
             this.storeLabel.Name = "storeLabel";
-            this.storeLabel.Size = new System.Drawing.Size(121, 16);
+            this.storeLabel.Size = new System.Drawing.Size(142, 16);
             this.storeLabel.TabIndex = 7;
             this.storeLabel.Text = "Store file in a video";
             // 
             // storeOutputPathTextBox
             // 
-            this.storeOutputPathTextBox.Location = new System.Drawing.Point(170, 81);
+            this.storeOutputPathTextBox.Location = new System.Drawing.Point(170, 82);
             this.storeOutputPathTextBox.Name = "storeOutputPathTextBox";
             this.storeOutputPathTextBox.ReadOnly = true;
             this.storeOutputPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -154,7 +155,7 @@
             // setStoreOutputPathButton
             // 
             this.setStoreOutputPathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.setStoreOutputPathButton.Location = new System.Drawing.Point(22, 78);
+            this.setStoreOutputPathButton.Location = new System.Drawing.Point(22, 80);
             this.setStoreOutputPathButton.Name = "setStoreOutputPathButton";
             this.setStoreOutputPathButton.Size = new System.Drawing.Size(129, 23);
             this.setStoreOutputPathButton.TabIndex = 9;
@@ -164,11 +165,11 @@
             // 
             // storeFpsTextBox
             // 
-            this.storeFpsTextBox.Location = new System.Drawing.Point(91, 113);
+            this.storeFpsTextBox.Location = new System.Drawing.Point(105, 113);
             this.storeFpsTextBox.Name = "storeFpsTextBox";
             this.storeFpsTextBox.Size = new System.Drawing.Size(73, 20);
             this.storeFpsTextBox.TabIndex = 10;
-            this.storeFpsTextBox.Text = "1";
+            this.storeFpsTextBox.Text = "3";
             this.storeFpsTextBox.TextChanged += new System.EventHandler(this.storeFpsTextBox_TextChanged);
             // 
             // storeFpsLabel
@@ -191,7 +192,7 @@
             // 
             // storeBoxSizeTextBox
             // 
-            this.storeBoxSizeTextBox.Location = new System.Drawing.Point(91, 140);
+            this.storeBoxSizeTextBox.Location = new System.Drawing.Point(105, 140);
             this.storeBoxSizeTextBox.Name = "storeBoxSizeTextBox";
             this.storeBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.storeBoxSizeTextBox.TabIndex = 13;
@@ -201,35 +202,37 @@
             // storeFpsRecommendedLabel
             // 
             this.storeFpsRecommendedLabel.AutoSize = true;
-            this.storeFpsRecommendedLabel.Location = new System.Drawing.Point(180, 116);
+            this.storeFpsRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.storeFpsRecommendedLabel.Location = new System.Drawing.Point(194, 116);
             this.storeFpsRecommendedLabel.Name = "storeFpsRecommendedLabel";
-            this.storeFpsRecommendedLabel.Size = new System.Drawing.Size(120, 13);
+            this.storeFpsRecommendedLabel.Size = new System.Drawing.Size(114, 13);
             this.storeFpsRecommendedLabel.TabIndex = 14;
-            this.storeFpsRecommendedLabel.Text = "(Recommended FPS: 1)";
+            this.storeFpsRecommendedLabel.Text = "Recommended FPS: 3";
             // 
             // storeBoxSizeRecommendedLabel
             // 
             this.storeBoxSizeRecommendedLabel.AutoSize = true;
-            this.storeBoxSizeRecommendedLabel.Location = new System.Drawing.Point(180, 143);
+            this.storeBoxSizeRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.storeBoxSizeRecommendedLabel.Location = new System.Drawing.Point(194, 143);
             this.storeBoxSizeRecommendedLabel.Name = "storeBoxSizeRecommendedLabel";
-            this.storeBoxSizeRecommendedLabel.Size = new System.Drawing.Size(141, 13);
+            this.storeBoxSizeRecommendedLabel.Size = new System.Drawing.Size(135, 13);
             this.storeBoxSizeRecommendedLabel.TabIndex = 15;
-            this.storeBoxSizeRecommendedLabel.Text = "(Recommended Box Size: 5)";
+            this.storeBoxSizeRecommendedLabel.Text = "Recommended Box Size: 5";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(19, 309);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 16);
+            this.label1.Size = new System.Drawing.Size(170, 16);
             this.label1.TabIndex = 16;
             this.label1.Text = "Extract file from a video";
             // 
             // extractProgressBar
             // 
-            this.extractProgressBar.Location = new System.Drawing.Point(22, 477);
+            this.extractProgressBar.Location = new System.Drawing.Point(22, 497);
             this.extractProgressBar.Name = "extractProgressBar";
             this.extractProgressBar.Size = new System.Drawing.Size(639, 23);
             this.extractProgressBar.TabIndex = 17;
@@ -237,24 +240,26 @@
             // extractBoxSizeRecommendedLabel
             // 
             this.extractBoxSizeRecommendedLabel.AutoSize = true;
-            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(180, 442);
+            this.extractBoxSizeRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(194, 462);
             this.extractBoxSizeRecommendedLabel.Name = "extractBoxSizeRecommendedLabel";
-            this.extractBoxSizeRecommendedLabel.Size = new System.Drawing.Size(194, 13);
+            this.extractBoxSizeRecommendedLabel.Size = new System.Drawing.Size(264, 13);
             this.extractBoxSizeRecommendedLabel.TabIndex = 23;
-            this.extractBoxSizeRecommendedLabel.Text = "(Must be the same as the original video)";
+            this.extractBoxSizeRecommendedLabel.Text = "This must be the same as the original video\'s Box Size.";
             // 
-            // extractFpsRecommendedLabel
+            // extractFpsMultiplierRecommendedLabel
             // 
-            this.extractFpsRecommendedLabel.AutoSize = true;
-            this.extractFpsRecommendedLabel.Location = new System.Drawing.Point(180, 415);
-            this.extractFpsRecommendedLabel.Name = "extractFpsRecommendedLabel";
-            this.extractFpsRecommendedLabel.Size = new System.Drawing.Size(362, 13);
-            this.extractFpsRecommendedLabel.TabIndex = 22;
-            this.extractFpsRecommendedLabel.Text = "(Set this to 6 if the video is from YouTube and the original video was 1 FPS)";
+            this.extractFpsMultiplierRecommendedLabel.AutoSize = true;
+            this.extractFpsMultiplierRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.extractFpsMultiplierRecommendedLabel.Location = new System.Drawing.Point(194, 411);
+            this.extractFpsMultiplierRecommendedLabel.Name = "extractFpsMultiplierRecommendedLabel";
+            this.extractFpsMultiplierRecommendedLabel.Size = new System.Drawing.Size(143, 13);
+            this.extractFpsMultiplierRecommendedLabel.TabIndex = 22;
+            this.extractFpsMultiplierRecommendedLabel.Text = "If the video is from YouTube:";
             // 
             // extractBoxSizeTextBox
             // 
-            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(91, 439);
+            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(105, 459);
             this.extractBoxSizeTextBox.Name = "extractBoxSizeTextBox";
             this.extractBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractBoxSizeTextBox.TabIndex = 21;
@@ -264,34 +269,34 @@
             // extractBoxSizeLabel
             // 
             this.extractBoxSizeLabel.AutoSize = true;
-            this.extractBoxSizeLabel.Location = new System.Drawing.Point(19, 442);
+            this.extractBoxSizeLabel.Location = new System.Drawing.Point(19, 462);
             this.extractBoxSizeLabel.Name = "extractBoxSizeLabel";
             this.extractBoxSizeLabel.Size = new System.Drawing.Size(48, 13);
             this.extractBoxSizeLabel.TabIndex = 20;
             this.extractBoxSizeLabel.Text = "Box Size";
             // 
-            // extractFpsLabel
+            // extractFpsMultiplierLabel
             // 
-            this.extractFpsLabel.AutoSize = true;
-            this.extractFpsLabel.Location = new System.Drawing.Point(19, 415);
-            this.extractFpsLabel.Name = "extractFpsLabel";
-            this.extractFpsLabel.Size = new System.Drawing.Size(27, 13);
-            this.extractFpsLabel.TabIndex = 19;
-            this.extractFpsLabel.Text = "FPS";
+            this.extractFpsMultiplierLabel.AutoSize = true;
+            this.extractFpsMultiplierLabel.Location = new System.Drawing.Point(19, 415);
+            this.extractFpsMultiplierLabel.Name = "extractFpsMultiplierLabel";
+            this.extractFpsMultiplierLabel.Size = new System.Drawing.Size(71, 13);
+            this.extractFpsMultiplierLabel.TabIndex = 19;
+            this.extractFpsMultiplierLabel.Text = "FPS Multiplier";
             // 
-            // extractFpsTextBox
+            // extractFpsMultiplierTextBox
             // 
-            this.extractFpsTextBox.Location = new System.Drawing.Point(91, 412);
-            this.extractFpsTextBox.Name = "extractFpsTextBox";
-            this.extractFpsTextBox.Size = new System.Drawing.Size(73, 20);
-            this.extractFpsTextBox.TabIndex = 18;
-            this.extractFpsTextBox.Text = "1";
-            this.extractFpsTextBox.TextChanged += new System.EventHandler(this.extractFpsTextBox_TextChanged);
+            this.extractFpsMultiplierTextBox.Location = new System.Drawing.Point(105, 412);
+            this.extractFpsMultiplierTextBox.Name = "extractFpsMultiplierTextBox";
+            this.extractFpsMultiplierTextBox.Size = new System.Drawing.Size(73, 20);
+            this.extractFpsMultiplierTextBox.TabIndex = 18;
+            this.extractFpsMultiplierTextBox.Text = "2";
+            this.extractFpsMultiplierTextBox.TextChanged += new System.EventHandler(this.extractFpsMultiplierTextBox_TextChanged);
             // 
             // setExtractOutputPathButton
             // 
             this.setExtractOutputPathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.setExtractOutputPathButton.Location = new System.Drawing.Point(22, 371);
+            this.setExtractOutputPathButton.Location = new System.Drawing.Point(22, 372);
             this.setExtractOutputPathButton.Name = "setExtractOutputPathButton";
             this.setExtractOutputPathButton.Size = new System.Drawing.Size(129, 23);
             this.setExtractOutputPathButton.TabIndex = 25;
@@ -318,27 +323,39 @@
             // 
             // extractInfoTextBox
             // 
-            this.extractInfoTextBox.Location = new System.Drawing.Point(22, 522);
+            this.extractInfoTextBox.Location = new System.Drawing.Point(22, 542);
             this.extractInfoTextBox.Name = "extractInfoTextBox";
             this.extractInfoTextBox.Size = new System.Drawing.Size(639, 60);
             this.extractInfoTextBox.TabIndex = 27;
             this.extractInfoTextBox.Text = "";
             // 
+            // extractFpsMultiplierRecommendedBLabel
+            // 
+            this.extractFpsMultiplierRecommendedBLabel.AutoSize = true;
+            this.extractFpsMultiplierRecommendedBLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.extractFpsMultiplierRecommendedBLabel.Location = new System.Drawing.Point(194, 424);
+            this.extractFpsMultiplierRecommendedBLabel.Name = "extractFpsMultiplierRecommendedBLabel";
+            this.extractFpsMultiplierRecommendedBLabel.Size = new System.Drawing.Size(458, 13);
+            this.extractFpsMultiplierRecommendedBLabel.TabIndex = 28;
+            this.extractFpsMultiplierRecommendedBLabel.Text = "Set this multiplier to 2 if the original video\'s FPS was 3, and to 6 if the origi" +
+    "nal video\'s FPS was 1.";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 614);
+            this.ClientSize = new System.Drawing.Size(690, 626);
+            this.Controls.Add(this.extractFpsMultiplierRecommendedBLabel);
             this.Controls.Add(this.extractInfoTextBox);
             this.Controls.Add(this.storeInfoTextBox);
             this.Controls.Add(this.setExtractOutputPathButton);
             this.Controls.Add(this.extractOutputPathTextBox);
             this.Controls.Add(this.extractBoxSizeRecommendedLabel);
-            this.Controls.Add(this.extractFpsRecommendedLabel);
+            this.Controls.Add(this.extractFpsMultiplierRecommendedLabel);
             this.Controls.Add(this.extractBoxSizeTextBox);
             this.Controls.Add(this.extractBoxSizeLabel);
-            this.Controls.Add(this.extractFpsLabel);
-            this.Controls.Add(this.extractFpsTextBox);
+            this.Controls.Add(this.extractFpsMultiplierLabel);
+            this.Controls.Add(this.extractFpsMultiplierTextBox);
             this.Controls.Add(this.extractProgressBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.storeBoxSizeRecommendedLabel);
@@ -390,15 +407,16 @@
         public System.Windows.Forms.ProgressBar extractProgressBar;
         private System.Windows.Forms.FolderBrowserDialog extractOutputPathFolderBrowserDialog;
         private System.Windows.Forms.Label extractBoxSizeRecommendedLabel;
-        private System.Windows.Forms.Label extractFpsRecommendedLabel;
+        private System.Windows.Forms.Label extractFpsMultiplierRecommendedLabel;
         private System.Windows.Forms.TextBox extractBoxSizeTextBox;
         private System.Windows.Forms.Label extractBoxSizeLabel;
-        private System.Windows.Forms.Label extractFpsLabel;
-        private System.Windows.Forms.TextBox extractFpsTextBox;
+        private System.Windows.Forms.Label extractFpsMultiplierLabel;
+        private System.Windows.Forms.TextBox extractFpsMultiplierTextBox;
         private System.Windows.Forms.Button setExtractOutputPathButton;
         private System.Windows.Forms.TextBox extractOutputPathTextBox;
         public System.Windows.Forms.RichTextBox storeInfoTextBox;
         public System.Windows.Forms.RichTextBox extractInfoTextBox;
+        private System.Windows.Forms.Label extractFpsMultiplierRecommendedBLabel;
     }
 }
 

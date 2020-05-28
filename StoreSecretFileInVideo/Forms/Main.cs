@@ -8,10 +8,10 @@ using System.Windows.Forms;
 namespace StoreFileInVideo {
     public partial class Main : Form {
 
-        private const int DefaultStoreFps = 1;
+        private const int DefaultStoreFps = 3;
         private const int DefaultStoreBoxSize = 5;
 
-        private const int DefaultExtractFps = 1;
+        private const int DefaultExtractFpsMultiplier = 1;
         private const int DefaultExtractBoxSize = 5;
 
         public Main () {
@@ -28,7 +28,7 @@ namespace StoreFileInVideo {
             UpdateSetExtractOutputPathButtonStatus();
             UpdateExtractButtonStatus();
 
-            SetExtractFpsTextBoxDefault();
+            SetExtractFpsMultiplierTextBoxDefault();
             SetExtractBoxSizeTextBoxDefault();
         }
 
@@ -64,7 +64,7 @@ namespace StoreFileInVideo {
         private void Extract () {
             VideoReader videoReader = new VideoReader();
             try {
-                videoReader.ReadVideo(extractVideoPathTextBox.Text, extractOutputPathTextBox.Text, int.Parse(extractBoxSizeTextBox.Text), extractProgressBar, int.Parse(extractFpsTextBox.Text), extractInfoTextBox);
+                videoReader.ReadVideo(extractVideoPathTextBox.Text, extractOutputPathTextBox.Text, int.Parse(extractBoxSizeTextBox.Text), extractProgressBar, int.Parse(extractFpsMultiplierTextBox.Text), extractInfoTextBox);
             } catch(Exception e) {
                 extractInfoTextBox.Text = "Error extracting file!\n" + e.Message;
             }
@@ -125,8 +125,8 @@ namespace StoreFileInVideo {
             storeBoxSizeTextBox.Text = DefaultStoreBoxSize.ToString();
         }
 
-        private void SetExtractFpsTextBoxDefault () {
-            extractFpsTextBox.Text = DefaultExtractFps.ToString();
+        private void SetExtractFpsMultiplierTextBoxDefault () {
+            extractFpsMultiplierTextBox.Text = DefaultExtractFpsMultiplier.ToString();
         }
 
         private void SetExtractBoxSizeTextBoxDefault () {
@@ -160,9 +160,9 @@ namespace StoreFileInVideo {
             UpdateExtractButtonStatus();
         }
 
-        private void extractFpsTextBox_TextChanged (object sender, EventArgs e) {
-            if (extractFpsTextBox.Text.Length == 0 || int.Parse(extractFpsTextBox.Text) <= 0) {
-                SetExtractFpsTextBoxDefault();
+        private void extractFpsMultiplierTextBox_TextChanged (object sender, EventArgs e) {
+            if (extractFpsMultiplierTextBox.Text.Length == 0 || int.Parse(extractFpsMultiplierTextBox.Text) <= 0) {
+                SetExtractFpsMultiplierTextBoxDefault();
             }
         }
 

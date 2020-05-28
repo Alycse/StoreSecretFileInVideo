@@ -10,44 +10,32 @@ using System.Windows.Forms;
 namespace StoreFileInVideo {
     class VideoReader {
 
-        public async void ReadVideo (string videoFilename, string outputPath, int boxSize, ProgressBar progressBar, int fps, RichTextBox extractInfoTextBox) {
+        public async void ReadVideo (string videoFilename, string outputPath, int boxSize, ProgressBar progressBar, int fpsMultiplier, RichTextBox extractInfoTextBox) {
             extractInfoTextBox.Text = "Extracting file from video...";
 
             VideoFileReader reader = new VideoFileReader();
             reader.Open(videoFilename);
 
-            progressBar.Value = 0;
+            progressBar.Value = 1;
 
             int totalProgressCount = 0;
             var progress = new Progress<int>(progressIncrement => {
                 totalProgressCount += progressIncrement;
                 if (reader.IsOpen) {
+                    Console.WriteLine(totalProgressCount + " / " + reader.FrameCount);
                     progressBar.Value = Math.Min(100, (int)(((float)totalProgressCount / (float)reader.FrameCount) * 100.0f));
                 }
             });
 
             ByteReader byteReader = new ByteReader(videoFilename, progress);
-            long getFileByteTaskFraction = reader.FrameCount / 4;
+
             Task<List<byte>> getFileBytesTask = Task<List<byte>>.Factory.StartNew(() =>
-                byteReader.GetFileBytes(fps, getFileByteTaskFraction, fps, boxSize)
+                byteReader.GetFileBytes(fpsMultiplier, (int)reader.FrameCount, fpsMultiplier, boxSize)
             );;
-            Task<List<byte>> getFileBytesTask2 = Task<List<byte>>.Factory.StartNew(() =>
-                byteReader.GetFileBytes(getFileByteTaskFraction, getFileByteTaskFraction * 2, fps, boxSize)
-            );
-            Task<List<byte>> getFileBytesTask3 = Task<List<byte>>.Factory.StartNew(() =>
-                byteReader.GetFileBytes((getFileByteTaskFraction * 2), getFileByteTaskFraction * 3, fps, boxSize)
-            );
-            Task<List<byte>> getFileBytesTask4 = Task<List<byte>>.Factory.StartNew(() =>
-                byteReader.GetFileBytes((getFileByteTaskFraction * 3), reader.FrameCount, fps, boxSize)
-            );
 
-            await Task.WhenAll(getFileBytesTask, getFileBytesTask2, getFileBytesTask3, getFileBytesTask4);
+            await Task.WhenAll(getFileBytesTask);
 
-            getFileBytesTask.Result.AddRange(getFileBytesTask2.Result);
-            getFileBytesTask.Result.AddRange(getFileBytesTask3.Result);
-            getFileBytesTask.Result.AddRange(getFileBytesTask4.Result);
-
-            string outputFilename = Encoding.ASCII.GetString(byteReader.GetFileBytes(0, 1, fps, boxSize).ToArray());
+            string outputFilename = Encoding.ASCII.GetString(byteReader.GetFileBytes(0, 1, fpsMultiplier, boxSize).ToArray());
 
             try {
                 File.WriteAllBytes(outputPath + "/" + outputFilename, getFileBytesTask.Result.ToArray());
