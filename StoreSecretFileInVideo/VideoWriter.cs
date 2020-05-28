@@ -18,7 +18,7 @@ namespace StoreFileInVideo {
             int totalProgressCount = 0;
             var progress = new Progress<int>(progressIncrement => {
                 totalProgressCount += progressIncrement;
-                storeInfoTextBox.Text = totalProgressCount + "/" + fileBytes.Length + " Bytes stored.";
+                storeInfoTextBox.Text = totalProgressCount + "/" + fileBytes.Length + " bytes stored.";
                 progressBar.Value = Math.Min(100, (int)(((float)totalProgressCount / (float)fileBytes.Length) * 100.0f));
             });
 

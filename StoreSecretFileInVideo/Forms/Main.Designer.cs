@@ -290,7 +290,7 @@
             this.extractFpsMultiplierTextBox.Name = "extractFpsMultiplierTextBox";
             this.extractFpsMultiplierTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractFpsMultiplierTextBox.TabIndex = 18;
-            this.extractFpsMultiplierTextBox.Text = "2";
+            this.extractFpsMultiplierTextBox.Text = "1";
             this.extractFpsMultiplierTextBox.TextChanged += new System.EventHandler(this.extractFpsMultiplierTextBox_TextChanged);
             // 
             // setExtractOutputPathButton
@@ -317,6 +317,7 @@
             // 
             this.storeInfoTextBox.Location = new System.Drawing.Point(22, 217);
             this.storeInfoTextBox.Name = "storeInfoTextBox";
+            this.storeInfoTextBox.ReadOnly = true;
             this.storeInfoTextBox.Size = new System.Drawing.Size(639, 60);
             this.storeInfoTextBox.TabIndex = 26;
             this.storeInfoTextBox.Text = "";
@@ -325,6 +326,7 @@
             // 
             this.extractInfoTextBox.Location = new System.Drawing.Point(22, 542);
             this.extractInfoTextBox.Name = "extractInfoTextBox";
+            this.extractInfoTextBox.ReadOnly = true;
             this.extractInfoTextBox.Size = new System.Drawing.Size(639, 60);
             this.extractInfoTextBox.TabIndex = 27;
             this.extractInfoTextBox.Text = "";

@@ -21,7 +21,7 @@ namespace StoreFileInVideo {
             var progress = new Progress<int>(progressIncrement => {
                 totalProgressCount += progressIncrement;
                 if (reader.IsOpen) {
-                    extractInfoTextBox.Text = totalProgressCount + "/" + reader.FrameCount + " Frames processed.";
+                    extractInfoTextBox.Text = totalProgressCount + "/" + reader.FrameCount + " frames processed.";
                     progressBar.Value = Math.Min(100, (int)(((float)totalProgressCount / (float)reader.FrameCount) * 100.0f));
                 }
             });

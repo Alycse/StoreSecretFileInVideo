@@ -11,7 +11,7 @@ namespace StoreFileInVideo {
         private const int DefaultStoreFps = 3;
         private const int DefaultStoreBoxSize = 5;
 
-        private const int DefaultExtractFpsMultiplier = 2;
+        private const int DefaultExtractFpsMultiplier = 1;
         private const int DefaultExtractBoxSize = 5;
 
         public Main () {
