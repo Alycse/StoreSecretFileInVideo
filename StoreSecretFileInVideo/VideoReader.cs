@@ -12,28 +12,25 @@ namespace StoreFileInVideo {
 
         public async void ReadVideo (string videoFilename, string outputPath, int boxSize, ProgressBar progressBar, int fpsMultiplier, RichTextBox extractInfoTextBox) {
             extractInfoTextBox.Text = "Extracting file from video...";
+            progressBar.Value = 1;
 
             VideoFileReader reader = new VideoFileReader();
             reader.Open(videoFilename);
-
-            progressBar.Value = 1;
 
             int totalProgressCount = 0;
             var progress = new Progress<int>(progressIncrement => {
                 totalProgressCount += progressIncrement;
                 if (reader.IsOpen) {
-                    Console.WriteLine(totalProgressCount + " / " + reader.FrameCount);
+                    extractInfoTextBox.Text = totalProgressCount + "/" + reader.FrameCount + " Frames processed.";
                     progressBar.Value = Math.Min(100, (int)(((float)totalProgressCount / (float)reader.FrameCount) * 100.0f));
                 }
             });
 
             ByteReader byteReader = new ByteReader(videoFilename, progress);
-
             Task<List<byte>> getFileBytesTask = Task<List<byte>>.Factory.StartNew(() =>
                 byteReader.GetFileBytes(fpsMultiplier, (int)reader.FrameCount, fpsMultiplier, boxSize)
             );;
-
-            await Task.WhenAll(getFileBytesTask);
+            await getFileBytesTask;
 
             string outputFilename = Encoding.ASCII.GetString(byteReader.GetFileBytes(0, 1, fpsMultiplier, boxSize).ToArray());
 

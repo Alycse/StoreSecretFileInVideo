@@ -14,7 +14,7 @@ namespace StoreFileInVideo {
         private const int ProgressInterval = 1;
 
         private IProgress<int> _progress;
-        int progressCount;
+        private int _progressCount;
 
         private string _filename;
 
@@ -29,7 +29,7 @@ namespace StoreFileInVideo {
 
             List<byte> fileBytes = new List<byte>();
 
-            progressCount = 0;
+            _progressCount = 0;
 
             for (int i = start; i < end; i++) {
                 using (Bitmap fileImage = reader.ReadVideoFrame(i)) {
@@ -39,7 +39,7 @@ namespace StoreFileInVideo {
                     GetVideoFrameBytes (fileBytes, fileImage, boxSize);
                 }
 
-                progressCount++;
+                _progressCount++;
 
                 ReportProgress(increment);
             }
@@ -68,7 +68,7 @@ namespace StoreFileInVideo {
         }
 
         private void ReportProgress (int increment) {
-           if (progressCount % ProgressInterval == 0) {
+           if (_progressCount % ProgressInterval == 0) {
                 _progress?.Report(ProgressInterval * increment);
             }
         }

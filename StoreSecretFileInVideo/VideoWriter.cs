@@ -13,12 +13,12 @@ namespace StoreFileInVideo {
 
         public async void WriteVideo (string outputPath, int fps, byte[] fileBytes, byte[] filenameBytes, int boxSize, ProgressBar progressBar, RichTextBox storeInfoTextBox) {
             storeInfoTextBox.Text = "Storing file to a video...";
-
             progressBar.Value = 1;
 
             int totalProgressCount = 0;
             var progress = new Progress<int>(progressIncrement => {
                 totalProgressCount += progressIncrement;
+                storeInfoTextBox.Text = totalProgressCount + "/" + fileBytes.Length + " Bytes stored.";
                 progressBar.Value = Math.Min(100, (int)(((float)totalProgressCount / (float)fileBytes.Length) * 100.0f));
             });
 
@@ -34,7 +34,6 @@ namespace StoreFileInVideo {
             await drawImagesTask;
 
             progressBar.Value = 100;
-
             storeInfoTextBox.Text = "Video was sucessfully stored!";
 
             writer.Close();
