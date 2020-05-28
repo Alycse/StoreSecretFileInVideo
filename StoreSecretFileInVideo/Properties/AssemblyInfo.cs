@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("StoreFileInVideo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Store a file secretly in a video!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Alycse")]
 [assembly: AssemblyProduct("StoreFileInVideo")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

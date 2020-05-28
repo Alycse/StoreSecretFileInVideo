@@ -59,7 +59,7 @@
             // browseStoreFilePathButton
             // 
             this.browseStoreFilePathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.browseStoreFilePathButton.Location = new System.Drawing.Point(23, 62);
+            this.browseStoreFilePathButton.Location = new System.Drawing.Point(22, 53);
             this.browseStoreFilePathButton.Name = "browseStoreFilePathButton";
             this.browseStoreFilePathButton.Size = new System.Drawing.Size(129, 23);
             this.browseStoreFilePathButton.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             // extractButton
             // 
-            this.extractButton.Location = new System.Drawing.Point(568, 356);
+            this.extractButton.Location = new System.Drawing.Point(567, 347);
             this.extractButton.Name = "extractButton";
             this.extractButton.Size = new System.Drawing.Size(94, 47);
             this.extractButton.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             // extractVideoPathTextBox
             // 
-            this.extractVideoPathTextBox.Location = new System.Drawing.Point(171, 356);
+            this.extractVideoPathTextBox.Location = new System.Drawing.Point(170, 347);
             this.extractVideoPathTextBox.Name = "extractVideoPathTextBox";
             this.extractVideoPathTextBox.ReadOnly = true;
             this.extractVideoPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -97,7 +97,7 @@
             // 
             // browseExtractVideoPathButton
             // 
-            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(23, 353);
+            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(22, 344);
             this.browseExtractVideoPathButton.Name = "browseExtractVideoPathButton";
             this.browseExtractVideoPathButton.Size = new System.Drawing.Size(129, 23);
             this.browseExtractVideoPathButton.TabIndex = 3;
@@ -107,14 +107,14 @@
             // 
             // storeProgressBar
             // 
-            this.storeProgressBar.Location = new System.Drawing.Point(23, 185);
+            this.storeProgressBar.Location = new System.Drawing.Point(22, 176);
             this.storeProgressBar.Name = "storeProgressBar";
             this.storeProgressBar.Size = new System.Drawing.Size(639, 23);
             this.storeProgressBar.TabIndex = 6;
             // 
             // storeButton
             // 
-            this.storeButton.Location = new System.Drawing.Point(568, 64);
+            this.storeButton.Location = new System.Drawing.Point(567, 55);
             this.storeButton.Name = "storeButton";
             this.storeButton.Size = new System.Drawing.Size(94, 46);
             this.storeButton.TabIndex = 2;
@@ -124,7 +124,7 @@
             // 
             // storeFilePathTextBox
             // 
-            this.storeFilePathTextBox.Location = new System.Drawing.Point(171, 64);
+            this.storeFilePathTextBox.Location = new System.Drawing.Point(170, 55);
             this.storeFilePathTextBox.Name = "storeFilePathTextBox";
             this.storeFilePathTextBox.ReadOnly = true;
             this.storeFilePathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -136,7 +136,7 @@
             this.storeLabel.AutoSize = true;
             this.storeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storeLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.storeLabel.Location = new System.Drawing.Point(20, 26);
+            this.storeLabel.Location = new System.Drawing.Point(19, 17);
             this.storeLabel.Name = "storeLabel";
             this.storeLabel.Size = new System.Drawing.Size(121, 16);
             this.storeLabel.TabIndex = 7;
@@ -144,7 +144,7 @@
             // 
             // storeOutputPathTextBox
             // 
-            this.storeOutputPathTextBox.Location = new System.Drawing.Point(171, 90);
+            this.storeOutputPathTextBox.Location = new System.Drawing.Point(170, 81);
             this.storeOutputPathTextBox.Name = "storeOutputPathTextBox";
             this.storeOutputPathTextBox.ReadOnly = true;
             this.storeOutputPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -154,7 +154,7 @@
             // setStoreOutputPathButton
             // 
             this.setStoreOutputPathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.setStoreOutputPathButton.Location = new System.Drawing.Point(23, 87);
+            this.setStoreOutputPathButton.Location = new System.Drawing.Point(22, 78);
             this.setStoreOutputPathButton.Name = "setStoreOutputPathButton";
             this.setStoreOutputPathButton.Size = new System.Drawing.Size(129, 23);
             this.setStoreOutputPathButton.TabIndex = 9;
@@ -164,7 +164,7 @@
             // 
             // storeFpsTextBox
             // 
-            this.storeFpsTextBox.Location = new System.Drawing.Point(92, 122);
+            this.storeFpsTextBox.Location = new System.Drawing.Point(91, 113);
             this.storeFpsTextBox.Name = "storeFpsTextBox";
             this.storeFpsTextBox.Size = new System.Drawing.Size(73, 20);
             this.storeFpsTextBox.TabIndex = 10;
@@ -174,7 +174,7 @@
             // storeFpsLabel
             // 
             this.storeFpsLabel.AutoSize = true;
-            this.storeFpsLabel.Location = new System.Drawing.Point(20, 125);
+            this.storeFpsLabel.Location = new System.Drawing.Point(19, 116);
             this.storeFpsLabel.Name = "storeFpsLabel";
             this.storeFpsLabel.Size = new System.Drawing.Size(27, 13);
             this.storeFpsLabel.TabIndex = 11;
@@ -183,7 +183,7 @@
             // storeBoxSizeLabel
             // 
             this.storeBoxSizeLabel.AutoSize = true;
-            this.storeBoxSizeLabel.Location = new System.Drawing.Point(20, 152);
+            this.storeBoxSizeLabel.Location = new System.Drawing.Point(19, 143);
             this.storeBoxSizeLabel.Name = "storeBoxSizeLabel";
             this.storeBoxSizeLabel.Size = new System.Drawing.Size(48, 13);
             this.storeBoxSizeLabel.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             // storeBoxSizeTextBox
             // 
-            this.storeBoxSizeTextBox.Location = new System.Drawing.Point(92, 149);
+            this.storeBoxSizeTextBox.Location = new System.Drawing.Point(91, 140);
             this.storeBoxSizeTextBox.Name = "storeBoxSizeTextBox";
             this.storeBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.storeBoxSizeTextBox.TabIndex = 13;
@@ -201,7 +201,7 @@
             // storeFpsRecommendedLabel
             // 
             this.storeFpsRecommendedLabel.AutoSize = true;
-            this.storeFpsRecommendedLabel.Location = new System.Drawing.Point(181, 125);
+            this.storeFpsRecommendedLabel.Location = new System.Drawing.Point(180, 116);
             this.storeFpsRecommendedLabel.Name = "storeFpsRecommendedLabel";
             this.storeFpsRecommendedLabel.Size = new System.Drawing.Size(120, 13);
             this.storeFpsRecommendedLabel.TabIndex = 14;
@@ -210,7 +210,7 @@
             // storeBoxSizeRecommendedLabel
             // 
             this.storeBoxSizeRecommendedLabel.AutoSize = true;
-            this.storeBoxSizeRecommendedLabel.Location = new System.Drawing.Point(181, 152);
+            this.storeBoxSizeRecommendedLabel.Location = new System.Drawing.Point(180, 143);
             this.storeBoxSizeRecommendedLabel.Name = "storeBoxSizeRecommendedLabel";
             this.storeBoxSizeRecommendedLabel.Size = new System.Drawing.Size(141, 13);
             this.storeBoxSizeRecommendedLabel.TabIndex = 15;
@@ -221,7 +221,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(20, 318);
+            this.label1.Location = new System.Drawing.Point(19, 309);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 16);
             this.label1.TabIndex = 16;
@@ -229,7 +229,7 @@
             // 
             // extractProgressBar
             // 
-            this.extractProgressBar.Location = new System.Drawing.Point(23, 486);
+            this.extractProgressBar.Location = new System.Drawing.Point(22, 477);
             this.extractProgressBar.Name = "extractProgressBar";
             this.extractProgressBar.Size = new System.Drawing.Size(639, 23);
             this.extractProgressBar.TabIndex = 17;
@@ -237,7 +237,7 @@
             // extractBoxSizeRecommendedLabel
             // 
             this.extractBoxSizeRecommendedLabel.AutoSize = true;
-            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(181, 451);
+            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(180, 442);
             this.extractBoxSizeRecommendedLabel.Name = "extractBoxSizeRecommendedLabel";
             this.extractBoxSizeRecommendedLabel.Size = new System.Drawing.Size(194, 13);
             this.extractBoxSizeRecommendedLabel.TabIndex = 23;
@@ -246,7 +246,7 @@
             // extractFpsRecommendedLabel
             // 
             this.extractFpsRecommendedLabel.AutoSize = true;
-            this.extractFpsRecommendedLabel.Location = new System.Drawing.Point(181, 424);
+            this.extractFpsRecommendedLabel.Location = new System.Drawing.Point(180, 415);
             this.extractFpsRecommendedLabel.Name = "extractFpsRecommendedLabel";
             this.extractFpsRecommendedLabel.Size = new System.Drawing.Size(362, 13);
             this.extractFpsRecommendedLabel.TabIndex = 22;
@@ -254,7 +254,7 @@
             // 
             // extractBoxSizeTextBox
             // 
-            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(92, 448);
+            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(91, 439);
             this.extractBoxSizeTextBox.Name = "extractBoxSizeTextBox";
             this.extractBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractBoxSizeTextBox.TabIndex = 21;
@@ -264,7 +264,7 @@
             // extractBoxSizeLabel
             // 
             this.extractBoxSizeLabel.AutoSize = true;
-            this.extractBoxSizeLabel.Location = new System.Drawing.Point(20, 451);
+            this.extractBoxSizeLabel.Location = new System.Drawing.Point(19, 442);
             this.extractBoxSizeLabel.Name = "extractBoxSizeLabel";
             this.extractBoxSizeLabel.Size = new System.Drawing.Size(48, 13);
             this.extractBoxSizeLabel.TabIndex = 20;
@@ -273,7 +273,7 @@
             // extractFpsLabel
             // 
             this.extractFpsLabel.AutoSize = true;
-            this.extractFpsLabel.Location = new System.Drawing.Point(20, 424);
+            this.extractFpsLabel.Location = new System.Drawing.Point(19, 415);
             this.extractFpsLabel.Name = "extractFpsLabel";
             this.extractFpsLabel.Size = new System.Drawing.Size(27, 13);
             this.extractFpsLabel.TabIndex = 19;
@@ -281,7 +281,7 @@
             // 
             // extractFpsTextBox
             // 
-            this.extractFpsTextBox.Location = new System.Drawing.Point(92, 421);
+            this.extractFpsTextBox.Location = new System.Drawing.Point(91, 412);
             this.extractFpsTextBox.Name = "extractFpsTextBox";
             this.extractFpsTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractFpsTextBox.TabIndex = 18;
@@ -291,7 +291,7 @@
             // setExtractOutputPathButton
             // 
             this.setExtractOutputPathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.setExtractOutputPathButton.Location = new System.Drawing.Point(23, 380);
+            this.setExtractOutputPathButton.Location = new System.Drawing.Point(22, 371);
             this.setExtractOutputPathButton.Name = "setExtractOutputPathButton";
             this.setExtractOutputPathButton.Size = new System.Drawing.Size(129, 23);
             this.setExtractOutputPathButton.TabIndex = 25;
@@ -301,7 +301,7 @@
             // 
             // extractOutputPathTextBox
             // 
-            this.extractOutputPathTextBox.Location = new System.Drawing.Point(171, 383);
+            this.extractOutputPathTextBox.Location = new System.Drawing.Point(170, 374);
             this.extractOutputPathTextBox.Name = "extractOutputPathTextBox";
             this.extractOutputPathTextBox.ReadOnly = true;
             this.extractOutputPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -310,7 +310,7 @@
             // 
             // storeInfoTextBox
             // 
-            this.storeInfoTextBox.Location = new System.Drawing.Point(23, 226);
+            this.storeInfoTextBox.Location = new System.Drawing.Point(22, 217);
             this.storeInfoTextBox.Name = "storeInfoTextBox";
             this.storeInfoTextBox.Size = new System.Drawing.Size(639, 60);
             this.storeInfoTextBox.TabIndex = 26;
@@ -318,7 +318,7 @@
             // 
             // extractInfoTextBox
             // 
-            this.extractInfoTextBox.Location = new System.Drawing.Point(23, 531);
+            this.extractInfoTextBox.Location = new System.Drawing.Point(22, 522);
             this.extractInfoTextBox.Name = "extractInfoTextBox";
             this.extractInfoTextBox.Size = new System.Drawing.Size(639, 60);
             this.extractInfoTextBox.TabIndex = 27;
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 654);
+            this.ClientSize = new System.Drawing.Size(690, 614);
             this.Controls.Add(this.extractInfoTextBox);
             this.Controls.Add(this.storeInfoTextBox);
             this.Controls.Add(this.setExtractOutputPathButton);
@@ -357,8 +357,9 @@
             this.Controls.Add(this.storeButton);
             this.Controls.Add(this.storeFilePathTextBox);
             this.Controls.Add(this.browseStoreFilePathButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Store Secret File In Video";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
