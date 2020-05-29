@@ -55,6 +55,7 @@
             this.storeInfoTextBox = new System.Windows.Forms.RichTextBox();
             this.extractInfoTextBox = new System.Windows.Forms.RichTextBox();
             this.extractFpsMultiplierRecommendedBLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseStoreFilePathButton
@@ -79,7 +80,7 @@
             // 
             // extractButton
             // 
-            this.extractButton.Location = new System.Drawing.Point(567, 347);
+            this.extractButton.Location = new System.Drawing.Point(567, 321);
             this.extractButton.Name = "extractButton";
             this.extractButton.Size = new System.Drawing.Size(94, 47);
             this.extractButton.TabIndex = 5;
@@ -89,7 +90,7 @@
             // 
             // extractVideoPathTextBox
             // 
-            this.extractVideoPathTextBox.Location = new System.Drawing.Point(170, 347);
+            this.extractVideoPathTextBox.Location = new System.Drawing.Point(170, 321);
             this.extractVideoPathTextBox.Name = "extractVideoPathTextBox";
             this.extractVideoPathTextBox.ReadOnly = true;
             this.extractVideoPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -98,7 +99,7 @@
             // 
             // browseExtractVideoPathButton
             // 
-            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(22, 345);
+            this.browseExtractVideoPathButton.Location = new System.Drawing.Point(22, 319);
             this.browseExtractVideoPathButton.Name = "browseExtractVideoPathButton";
             this.browseExtractVideoPathButton.Size = new System.Drawing.Size(129, 23);
             this.browseExtractVideoPathButton.TabIndex = 3;
@@ -108,7 +109,7 @@
             // 
             // storeProgressBar
             // 
-            this.storeProgressBar.Location = new System.Drawing.Point(22, 176);
+            this.storeProgressBar.Location = new System.Drawing.Point(22, 178);
             this.storeProgressBar.Name = "storeProgressBar";
             this.storeProgressBar.Size = new System.Drawing.Size(639, 23);
             this.storeProgressBar.TabIndex = 6;
@@ -196,7 +197,7 @@
             this.storeBoxSizeTextBox.Name = "storeBoxSizeTextBox";
             this.storeBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.storeBoxSizeTextBox.TabIndex = 13;
-            this.storeBoxSizeTextBox.Text = "5";
+            this.storeBoxSizeTextBox.Text = "10";
             this.storeBoxSizeTextBox.TextChanged += new System.EventHandler(this.storeBoxSizeTextBox_TextChanged);
             // 
             // storeFpsRecommendedLabel
@@ -224,7 +225,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(19, 309);
+            this.label1.Location = new System.Drawing.Point(19, 283);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 16);
             this.label1.TabIndex = 16;
@@ -232,7 +233,7 @@
             // 
             // extractProgressBar
             // 
-            this.extractProgressBar.Location = new System.Drawing.Point(22, 497);
+            this.extractProgressBar.Location = new System.Drawing.Point(22, 518);
             this.extractProgressBar.Name = "extractProgressBar";
             this.extractProgressBar.Size = new System.Drawing.Size(639, 23);
             this.extractProgressBar.TabIndex = 17;
@@ -241,7 +242,7 @@
             // 
             this.extractBoxSizeRecommendedLabel.AutoSize = true;
             this.extractBoxSizeRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(194, 462);
+            this.extractBoxSizeRecommendedLabel.Location = new System.Drawing.Point(194, 483);
             this.extractBoxSizeRecommendedLabel.Name = "extractBoxSizeRecommendedLabel";
             this.extractBoxSizeRecommendedLabel.Size = new System.Drawing.Size(264, 13);
             this.extractBoxSizeRecommendedLabel.TabIndex = 23;
@@ -251,7 +252,7 @@
             // 
             this.extractFpsMultiplierRecommendedLabel.AutoSize = true;
             this.extractFpsMultiplierRecommendedLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.extractFpsMultiplierRecommendedLabel.Location = new System.Drawing.Point(194, 411);
+            this.extractFpsMultiplierRecommendedLabel.Location = new System.Drawing.Point(19, 436);
             this.extractFpsMultiplierRecommendedLabel.Name = "extractFpsMultiplierRecommendedLabel";
             this.extractFpsMultiplierRecommendedLabel.Size = new System.Drawing.Size(143, 13);
             this.extractFpsMultiplierRecommendedLabel.TabIndex = 22;
@@ -259,17 +260,17 @@
             // 
             // extractBoxSizeTextBox
             // 
-            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(105, 459);
+            this.extractBoxSizeTextBox.Location = new System.Drawing.Point(105, 480);
             this.extractBoxSizeTextBox.Name = "extractBoxSizeTextBox";
             this.extractBoxSizeTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractBoxSizeTextBox.TabIndex = 21;
-            this.extractBoxSizeTextBox.Text = "5";
+            this.extractBoxSizeTextBox.Text = "10";
             this.extractBoxSizeTextBox.TextChanged += new System.EventHandler(this.extractBoxSizeTextBox_TextChanged);
             // 
             // extractBoxSizeLabel
             // 
             this.extractBoxSizeLabel.AutoSize = true;
-            this.extractBoxSizeLabel.Location = new System.Drawing.Point(19, 462);
+            this.extractBoxSizeLabel.Location = new System.Drawing.Point(19, 483);
             this.extractBoxSizeLabel.Name = "extractBoxSizeLabel";
             this.extractBoxSizeLabel.Size = new System.Drawing.Size(48, 13);
             this.extractBoxSizeLabel.TabIndex = 20;
@@ -278,7 +279,7 @@
             // extractFpsMultiplierLabel
             // 
             this.extractFpsMultiplierLabel.AutoSize = true;
-            this.extractFpsMultiplierLabel.Location = new System.Drawing.Point(19, 415);
+            this.extractFpsMultiplierLabel.Location = new System.Drawing.Point(19, 389);
             this.extractFpsMultiplierLabel.Name = "extractFpsMultiplierLabel";
             this.extractFpsMultiplierLabel.Size = new System.Drawing.Size(71, 13);
             this.extractFpsMultiplierLabel.TabIndex = 19;
@@ -286,17 +287,17 @@
             // 
             // extractFpsMultiplierTextBox
             // 
-            this.extractFpsMultiplierTextBox.Location = new System.Drawing.Point(105, 412);
+            this.extractFpsMultiplierTextBox.Location = new System.Drawing.Point(105, 386);
             this.extractFpsMultiplierTextBox.Name = "extractFpsMultiplierTextBox";
             this.extractFpsMultiplierTextBox.Size = new System.Drawing.Size(73, 20);
             this.extractFpsMultiplierTextBox.TabIndex = 18;
-            this.extractFpsMultiplierTextBox.Text = "1";
+            this.extractFpsMultiplierTextBox.Text = "2";
             this.extractFpsMultiplierTextBox.TextChanged += new System.EventHandler(this.extractFpsMultiplierTextBox_TextChanged);
             // 
             // setExtractOutputPathButton
             // 
             this.setExtractOutputPathButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.setExtractOutputPathButton.Location = new System.Drawing.Point(22, 372);
+            this.setExtractOutputPathButton.Location = new System.Drawing.Point(22, 346);
             this.setExtractOutputPathButton.Name = "setExtractOutputPathButton";
             this.setExtractOutputPathButton.Size = new System.Drawing.Size(129, 23);
             this.setExtractOutputPathButton.TabIndex = 25;
@@ -306,7 +307,7 @@
             // 
             // extractOutputPathTextBox
             // 
-            this.extractOutputPathTextBox.Location = new System.Drawing.Point(170, 374);
+            this.extractOutputPathTextBox.Location = new System.Drawing.Point(170, 348);
             this.extractOutputPathTextBox.Name = "extractOutputPathTextBox";
             this.extractOutputPathTextBox.ReadOnly = true;
             this.extractOutputPathTextBox.Size = new System.Drawing.Size(373, 20);
@@ -318,16 +319,16 @@
             this.storeInfoTextBox.Location = new System.Drawing.Point(22, 217);
             this.storeInfoTextBox.Name = "storeInfoTextBox";
             this.storeInfoTextBox.ReadOnly = true;
-            this.storeInfoTextBox.Size = new System.Drawing.Size(639, 60);
+            this.storeInfoTextBox.Size = new System.Drawing.Size(639, 39);
             this.storeInfoTextBox.TabIndex = 26;
             this.storeInfoTextBox.Text = "";
             // 
             // extractInfoTextBox
             // 
-            this.extractInfoTextBox.Location = new System.Drawing.Point(22, 542);
+            this.extractInfoTextBox.Location = new System.Drawing.Point(22, 561);
             this.extractInfoTextBox.Name = "extractInfoTextBox";
             this.extractInfoTextBox.ReadOnly = true;
-            this.extractInfoTextBox.Size = new System.Drawing.Size(639, 60);
+            this.extractInfoTextBox.Size = new System.Drawing.Size(639, 38);
             this.extractInfoTextBox.TabIndex = 27;
             this.extractInfoTextBox.Text = "";
             // 
@@ -335,18 +336,29 @@
             // 
             this.extractFpsMultiplierRecommendedBLabel.AutoSize = true;
             this.extractFpsMultiplierRecommendedBLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.extractFpsMultiplierRecommendedBLabel.Location = new System.Drawing.Point(194, 424);
+            this.extractFpsMultiplierRecommendedBLabel.Location = new System.Drawing.Point(19, 451);
             this.extractFpsMultiplierRecommendedBLabel.Name = "extractFpsMultiplierRecommendedBLabel";
-            this.extractFpsMultiplierRecommendedBLabel.Size = new System.Drawing.Size(458, 13);
+            this.extractFpsMultiplierRecommendedBLabel.Size = new System.Drawing.Size(434, 13);
             this.extractFpsMultiplierRecommendedBLabel.TabIndex = 28;
-            this.extractFpsMultiplierRecommendedBLabel.Text = "Set this multiplier to 2 if the original video\'s FPS was 3, and to 6 if the origi" +
-    "nal video\'s FPS was 1.";
+            this.extractFpsMultiplierRecommendedBLabel.Text = "Set this to 2 if the original video\'s FPS is 3 (Default), and to 6 if the origina" +
+    "l video\'s FPS is 1.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(19, 415);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Set this to 1 if it\'s still the original video file.";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 626);
+            this.ClientSize = new System.Drawing.Size(690, 616);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.extractFpsMultiplierRecommendedBLabel);
             this.Controls.Add(this.extractInfoTextBox);
             this.Controls.Add(this.storeInfoTextBox);
@@ -419,6 +431,7 @@
         public System.Windows.Forms.RichTextBox storeInfoTextBox;
         public System.Windows.Forms.RichTextBox extractInfoTextBox;
         private System.Windows.Forms.Label extractFpsMultiplierRecommendedBLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 
