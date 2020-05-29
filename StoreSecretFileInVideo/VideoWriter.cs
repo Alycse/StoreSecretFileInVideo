@@ -11,6 +11,9 @@ using Accord.Video.FFMPEG;
 namespace StoreFileInVideo {
     class VideoWriter {
 
+        const int Width = 640;
+        const int Height = 480;
+
         public async void WriteVideo (string outputPath, int fps, byte[] fileBytes, byte[] filenameBytes, int boxSize, ProgressBar progressBar, RichTextBox storeInfoTextBox) {
             storeInfoTextBox.Text = "Storing file to a video...";
             progressBar.Value = 1;
@@ -23,13 +26,13 @@ namespace StoreFileInVideo {
             });
 
             VideoFileWriter writer = new VideoFileWriter();
-            writer.Open(outputPath, 1280, 720, fps, VideoCodec.Raw);
+            writer.Open(outputPath, Width, Height, fps, VideoCodec.Default);
             Task drawImagesTask = Task.Factory.StartNew(() => {
                 ImageDrawer filenameImageDrawer = new ImageDrawer(writer, filenameBytes);
-                filenameImageDrawer.DrawImages(0, filenameBytes.Length, 1280, 720, boxSize);
+                filenameImageDrawer.DrawImages(0, filenameBytes.Length, Width, Height, boxSize);
 
                 ImageDrawer fileImageDrawer = new ImageDrawer(writer, fileBytes, progress);
-                fileImageDrawer.DrawImages(0, fileBytes.Length, 1280, 720, boxSize);
+                fileImageDrawer.DrawImages(0, fileBytes.Length, Width, Height, boxSize);
             });
             await drawImagesTask;
 

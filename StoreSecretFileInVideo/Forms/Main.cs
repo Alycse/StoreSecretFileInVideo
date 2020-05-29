@@ -9,10 +9,10 @@ namespace StoreFileInVideo {
     public partial class Main : Form {
 
         private const int DefaultStoreFps = 3;
-        private const int DefaultStoreBoxSize = 5;
+        private const int DefaultStoreBoxSize = 10;
 
-        private const int DefaultExtractFpsMultiplier = 1;
-        private const int DefaultExtractBoxSize = 5;
+        private const int DefaultExtractFpsMultiplier = 2;
+        private const int DefaultExtractBoxSize = 10;
 
         public Main () {
             InitializeComponent();

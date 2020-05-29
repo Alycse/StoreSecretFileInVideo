@@ -54,13 +54,13 @@ namespace StoreFileInVideo {
                     Color pixelColor = fileImage.GetPixel(x, y);
 
                     if (pixelColor.B >= 125) {
-                        if (pixelColor.R >= 125 && pixelColor.G < 125) {
+                        if (pixelColor.G < 125) {
                             fileByteBinary += '0';
-                        } else if (pixelColor.R < 125 && pixelColor.G > 125) {
+                        } else {
                             fileByteBinary += '1';
                         }
                     } else {
-                        goto End;
+                        break;
                     }
 
                     if (fileByteBinary.Length == 8) {
@@ -71,8 +71,6 @@ namespace StoreFileInVideo {
                     }
                 }
             }
-            End:
-            Console.WriteLine("end!");
         }
 
         private void ReportProgress (int increment) {

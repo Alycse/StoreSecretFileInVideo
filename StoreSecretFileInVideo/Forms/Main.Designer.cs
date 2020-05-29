@@ -74,8 +74,8 @@
             // 
             // storeOutputPathSaveDialog
             // 
-            this.storeOutputPathSaveDialog.DefaultExt = "avi";
-            this.storeOutputPathSaveDialog.Filter = "AVI Video Files (*.avi)|*.avi";
+            this.storeOutputPathSaveDialog.DefaultExt = "mp4";
+            this.storeOutputPathSaveDialog.Filter = "MPEG-4 Video Files (*.mp4)|*.mp4";
             // 
             // extractButton
             // 
