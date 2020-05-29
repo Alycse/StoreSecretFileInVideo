@@ -1,5 +1,6 @@
 ﻿using Accord;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Security;
 using System.Text;
@@ -30,6 +31,12 @@ namespace StoreFileInVideo {
 
             SetExtractFpsMultiplierTextBoxDefault();
             SetExtractBoxSizeTextBoxDefault();
+
+            SetVersionLabel();
+        }
+
+        private void SetVersionLabel () {
+            versionLabel.Text = "v" + FileVersionInfo.GetVersionInfo(Application.ExecutablePath).ProductVersion;
         }
 
         //Storing Methods

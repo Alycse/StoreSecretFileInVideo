@@ -56,6 +56,7 @@
             this.extractInfoTextBox = new System.Windows.Forms.RichTextBox();
             this.extractFpsMultiplierRecommendedBLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.versionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // browseStoreFilePathButton
@@ -353,11 +354,23 @@
             this.label2.TabIndex = 29;
             this.label2.Text = "Set this to 1 if it\'s still the original video file.";
             // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.versionLabel.Location = new System.Drawing.Point(626, 9);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(46, 13);
+            this.versionLabel.TabIndex = 30;
+            this.versionLabel.Text = "v1.0.0.1";
+            this.versionLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 616);
+            this.ClientSize = new System.Drawing.Size(684, 624);
+            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.extractFpsMultiplierRecommendedBLabel);
             this.Controls.Add(this.extractInfoTextBox);
@@ -432,6 +445,7 @@
         public System.Windows.Forms.RichTextBox extractInfoTextBox;
         private System.Windows.Forms.Label extractFpsMultiplierRecommendedBLabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label versionLabel;
     }
 }
 
