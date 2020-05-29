@@ -46,24 +46,37 @@ namespace StoreFileInVideo {
             Bitmap image = new Bitmap(width, height);
             Rectangle rect = new Rectangle(0, 0, boxSize, boxSize);
 
+            string fileByteBinary = Convert.ToString(_fileBytes[_byteIndex], 2).PadLeft(8, '0');
+            int i = 0;
             using (Graphics graphics = Graphics.FromImage(image)) {
-                for (int x = 0; x + boxSize - 1 < image.Width && _byteIndex < _fileBytes.Length; x += boxSize) {
-
-                    Color[] colorByte = ColorByte.GetColorsFromByte(_fileBytes[_byteIndex]);
-                    byte i = 0;
-                    for (int y = 0; y + boxSize - 1 < image.Height && i < colorByte.Length && !colorByte[i].IsEmpty; y += boxSize, i++) {
-                        brush.Color = colorByte[i];
-                        rect.X = x;
-                        rect.Y = y;
-                        graphics.FillRectangle(brush, rect);
+                for (int x = 0; x + boxSize - 1 < image.Width; x += boxSize) {
+                    for (int y = 0; y + boxSize - 1 < image.Height; y += boxSize) {
+                        if(i < fileByteBinary.Length) {
+                            if (fileByteBinary[i] == '0') {
+                                brush.Color = Color.FromArgb(255, 0, 255);
+                            } else {
+                                brush.Color = Color.FromArgb(0, 255, 255);
+                            }
+                            rect.X = x;
+                            rect.Y = y;
+                            graphics.FillRectangle(brush, rect);
+                            i++;
+                        }
+                        if(i == fileByteBinary.Length) {
+                            _byteIndex++;
+                            if(_byteIndex < _fileBytes.Length) {
+                                fileByteBinary = Convert.ToString(_fileBytes[_byteIndex], 2).PadLeft(8, '0');
+                                _progressCount++;
+                                i = 0;
+                                ReportProgress(1);
+                            } else {
+                                goto End;
+                            }
+                        }
                     }
-
-                    _byteIndex++;
-                    _progressCount++;
-
-                    ReportProgress(1);
                 }
             }
+            End:
 
             return image;
         }

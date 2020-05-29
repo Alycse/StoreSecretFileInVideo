@@ -23,7 +23,7 @@ namespace StoreFileInVideo {
             });
 
             VideoFileWriter writer = new VideoFileWriter();
-            writer.Open(outputPath, 1280, 720, fps, VideoCodec.Default);
+            writer.Open(outputPath, 1280, 720, fps, VideoCodec.Raw);
             Task drawImagesTask = Task.Factory.StartNew(() => {
                 ImageDrawer filenameImageDrawer = new ImageDrawer(writer, filenameBytes);
                 filenameImageDrawer.DrawImages(0, filenameBytes.Length, 1280, 720, boxSize);

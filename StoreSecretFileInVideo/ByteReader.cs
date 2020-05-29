@@ -32,45 +32,47 @@ namespace StoreFileInVideo {
             _progressCount = 0;
 
             for (int i = start; i < end; i++) {
+                Console.WriteLine("i: " + i + " < " + end);
                 using (Bitmap fileImage = reader.ReadVideoFrame(i)) {
-                    if (i % increment != 0) {
-                        continue;
+                    if(i % increment== 0) {
+                        GetVideoFrameBytes(fileBytes, fileImage, boxSize);
+
+                        _progressCount++;
+
+                        ReportProgress(increment);
                     }
-                    GetVideoFrameBytes (fileBytes, fileImage, boxSize);
                 }
-
-                _progressCount++;
-
-                ReportProgress(increment);
             }
 
             return fileBytes;
         }
 
         private void GetVideoFrameBytes (List<byte> fileBytes, Bitmap fileImage, int boxSize) {
-            for (int x = boxSize / 2; x < fileImage.Width; x += boxSize) {
-                byte videoFrameByte = 0;
-                bool hasColor = false;
-                for (int y = boxSize / 2; y < fileImage.Height; y += boxSize) {
+            string fileByteBinary = "";
+            for (int x = boxSize / 2; x <= fileImage.Width; x += boxSize) {
+                for (int y = boxSize / 2; y <= fileImage.Height; y += boxSize) {
                     Color pixelColor = fileImage.GetPixel(x, y);
+
                     if (pixelColor.B >= 125) {
-                        if (!hasColor) {
-                            hasColor = true;
-                        }
-                        byte additionalByte = ColorByte.GetAdditionalByteFromColor(pixelColor);
-                        if (additionalByte == 0) {
-                            break;
-                        } else {
-                            videoFrameByte += additionalByte;
+                        if (pixelColor.R >= 125 && pixelColor.G < 125) {
+                            fileByteBinary += '0';
+                        } else if (pixelColor.R < 125 && pixelColor.G > 125) {
+                            fileByteBinary += '1';
                         }
                     } else {
-                        break;
+                        goto End;
+                    }
+
+                    if (fileByteBinary.Length == 8) {
+                        byte videoFrameByte = (byte)Convert.ToInt32(fileByteBinary, 2);
+
+                        fileBytes.Add(videoFrameByte);
+                        fileByteBinary = "";
                     }
                 }
-                if (hasColor) {
-                    fileBytes.Add(videoFrameByte);
-                }
             }
+            End:
+            Console.WriteLine("end!");
         }
 
         private void ReportProgress (int increment) {

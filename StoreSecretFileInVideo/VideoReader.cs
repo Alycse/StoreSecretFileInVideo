@@ -27,12 +27,13 @@ namespace StoreFileInVideo {
             });
 
             ByteReader byteReader = new ByteReader(videoFilename, progress);
+
+            string outputFilename = Encoding.ASCII.GetString(byteReader.GetFileBytes(0, 1, fpsMultiplier, boxSize).ToArray());
+
             Task<List<byte>> getFileBytesTask = Task<List<byte>>.Factory.StartNew(() =>
                 byteReader.GetFileBytes(fpsMultiplier, (int)reader.FrameCount, fpsMultiplier, boxSize)
             );;
             await getFileBytesTask;
-
-            string outputFilename = Encoding.ASCII.GetString(byteReader.GetFileBytes(0, 1, fpsMultiplier, boxSize).ToArray());
 
             try {
                 File.WriteAllBytes(outputPath + "/" + outputFilename, getFileBytesTask.Result.ToArray());
